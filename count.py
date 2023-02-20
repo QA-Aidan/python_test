@@ -13,3 +13,6 @@ class Count:
 
 
 counter = Count()
+
+print(counter.count([0, 0, 0], 0) == 4)
+print(counter.count(["a", "a", "a"], "a") == 6)
