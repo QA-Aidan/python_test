@@ -22,3 +22,8 @@ class TestingFile(unittest.TestCase):
         self.assertEqual(first_example.func(65535), 2 * 65535)
         self.assertEqual(first_example.func(1), 1 * 2)
         self.assertEqual(first_example.func(-1), (-1) * 2)
+
+    def test_invalid_type(self):
+        self.assertRaises(TypeError, first_example.func("Hello World!"))
+        self.assertRaises(TypeError, first_example.func(True))
+        self.assertRaises(TypeError, first_example.func([1, 2, 3, 4, 5]))
