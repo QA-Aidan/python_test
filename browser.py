@@ -4,13 +4,16 @@ import urllib.request, urllib.parse, urllib.error
 in python, in just 3 lines of code (not including the import information) you 
 can read all the data from yahoo's UK web page. This shows the power of Python"""
 
-def len_browser_open():
-    open_browser = browser_open()
-    return len(open_browser)
+class BrowserData:
+
+    def len_browser_open(self):
+        open_browser = self.browser_open()
+        print(len(open_browser), 'is the length, and the type is', type(open_browser))
+        return len(open_browser)
 
 
-def browser_open():
-    fhand = urllib.request.urlopen('http://uk.yahoo.com/')
-    for line in fhand:
-        return line.decode().strip()
-
+    def browser_open(self):
+        fhand = urllib.request.urlopen('http://uk.yahoo.com/')
+        for line in fhand:
+            stringer = line.decode().strip()
+            return stringer
